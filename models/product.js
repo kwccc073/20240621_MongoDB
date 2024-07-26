@@ -12,8 +12,8 @@ const schema = new Schema({
   },
   category: {
     type: String,
+    // enum用於限制欄位只能使用values陣列內的值
     enum: {
-      // 限制欄位只能有陣列內的值
       values: ['遊戲', '音樂', '衣服', '手機'],
       // 錯誤訊息，{VALUE} 會自動替換成傳入的值
       message: '商品分類錯誤，查無 "{VALUE}" 分類'
