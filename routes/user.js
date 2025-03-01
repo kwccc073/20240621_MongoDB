@@ -1,5 +1,5 @@
-import { Router } from 'express'
-import { create, addCart, getId } from '../controllers/user.js'
+import { Router } from 'express' // 用於定義路由
+import { create, addCart, getId } from '../controllers/user.js' // 引入各種function
 
 const router = new Router()
 
