@@ -62,13 +62,14 @@ schema.pre('save', function (next) {
       const error = new Error.ValidationError(null)
       // .addError(指定的欄位, 欄位的錯誤訊息)
       error.addError('password', new Error.ValidatorError({ message: '密碼長度不正確' }))
-      // 繼續下一步，帶出錯誤給錯誤處理軟體
+      // 繼續下一步，帶出錯誤給錯誤處理軟體 (controllers裡面寫的catch)
       next(error)
       return // 後面的不執行
     }
   }
   // next() => 繼續下一步，把資料寫入資料庫
-  // 一定要呼叫next()，next()只能用一次
+  // 一定要呼叫next()，不然會卡住
+  // next()只能用一次
   next()
 })
 
